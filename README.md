@@ -1,3 +1,7 @@
+## 技术栈
+
+react + redux + react-router + webpack + ES6/7 + fetch + less + flex
+
 ## 项目结构
 
 ```

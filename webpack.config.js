@@ -32,20 +32,25 @@ module.exports = {
     },
   },
   module: {
-    loaders: [{
-      test: /\.js[x]?$/,
-      exclude: /node_modules/,
-      loader: 'react-hot!babel',
-    }, {
-      test: /\.less$/,
-      loader: 'style!css!postcss!less',
-    }, {
-      test: /\.css/,
-      loader: 'style!css',
-    }, {
-      test: /\.(png|jpg)$/,
-      loader: 'url-loader?limit=8192',
-    }, ],
+    loaders: [
+      {
+        test: /\.js[x]?$/,
+        exclude: /node_modules/,
+        loader: 'react-hot!babel',
+      }, 
+      {
+        test: /\.less$/,
+        loader: 'style!css!postcss!less',
+      }, 
+      {
+        test: /\.css/,
+        loader: 'style!css',
+      }, 
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader?limit=8192',
+      }, 
+    ],
   },
   plugins: [
     new webpack.DefinePlugin({

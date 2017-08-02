@@ -1,10 +1,10 @@
 /*
- * @Author: dupi
- * @Date: 2017-06-27 13:51:09
- * @Last Modified by: dupi
- * @Last Modified time: 2017-06-27 15:09:38
+ * @Author: zack bai
+ * @Date: 2017-07-03 15:11:55
+ * @Last Modified by:   zack bai
+ * @Last Modified time: 2017-08-02 15:11:55
  */
-
+ 
 import React, {
   Component
 } from 'react'
@@ -35,7 +35,7 @@ export default class welcome extends Component {
     return (
       <div className="welcome">
         <div className="content">
-          <h2 className="title">肚皮叔：行，我等你</h2>
+          <h2 className="title">IEC</h2>
         </div>
       </div>
     )

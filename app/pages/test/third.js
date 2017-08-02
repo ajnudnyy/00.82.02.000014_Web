@@ -14,20 +14,20 @@ import { Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Butto
 export default class popCheck extends Component {
   constructor(props) {
     super(props)
-    this.state = { 
-      
+    this.state = {
+
     }
   }
 
   componentDidMount() {
-    
+
   }
 
 
   handleClick() {
-    
+
   }
-  
+
   render() {
     return (
       <div class="page">

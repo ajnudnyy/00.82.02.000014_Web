@@ -2,7 +2,7 @@
 <html lang="cn">
 <head>
   <meta charset="utf-8">
-  <title>肚皮叔</title>
+  <title>拓斯达IEC系统</title>
 </head>
 <body>
   <div class="root" id="root"></div>
@@ -15,33 +15,52 @@
       // 用户登录信息
       global.STAFF = {
         code: 'admin',
-        name: '黄焖鸡',
+        name: '令狐冲',
       };
-      
+
       // 系统一二级菜单
       global.NAVIGATION = [
         {
           "id":600110230,
-          "name":"陈一发儿",
+          "name":"模温机",
           "icon": "book",
           "url":"",
           "children":[
-            { "id":600110232, "name":"童话镇", "url":"houseManage", "icon": "user"}
+            { "id":600110232, "name":"AD-80s-60-77-P-12TR", "url":"houseManage", "icon": "user"}
           ]
         },
         {
           "id":600110430,
-          "name":"老铁",
+          "name":"机械手",
           "icon": "calculator",
           "url":"",
           "children":[
-            { "id":600110431, "name":"情书小老弟", "url":"test", "icon": "book"},
+            { "id":600110431, "name":"AD-90s-50-77-P-12TR", "url":"test", "icon": "book"},
+          ]
+        },
+
+        {
+          "id": 600110240,
+          "name": "干燥机",
+          "icon": "book",
+          "url": "",
+          "children":[
+            { "id":600110241, "name":"AD-100s-70-77-P-12TR", "url":"moldTemp", "icon": "moldTemp"}
+          ]
+        },
+        {
+          "id":600110250,
+          "name":"注塑机",
+          "icon": "book",
+          "url":"",
+          "children":[
+            { "id":600110251, "name":"AD-90s-95-77-P-12TR", "url":"houseManage", "icon": "book"},
+            { "id":600110252, "name":"AD-90s-95-88-P-12TR", "url":"houseManage", "icon": "user"}
           ]
         },
       ];
 
       }(window.$GLOBALCONFIG);
   </script>
-
 </body>
 </html>

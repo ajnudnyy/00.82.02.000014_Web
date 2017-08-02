@@ -15,7 +15,8 @@ import {
 } from 'react-router'
 import {
   Button,
-  Spin
+  Spin,
+  Row, Col
 } from 'antd'
 import {
   fetchHouseCheckList,
@@ -34,9 +35,10 @@ import SearchTable from 'components/searchTable'
     houseCheckSearchResult: state.houseCheckSearchResult,
   })
 )
-export default class houseCheckList extends Component {
+export default class moldTemp extends Component {
   constructor(props) {
     super(props)
+    console.log(props)
     this.state = {
       data: {
 
@@ -87,59 +89,6 @@ export default class houseCheckList extends Component {
     this.props.dispatch(resetHouseCheckListQuery())
   }
 
-  columns() {
-    return [{
-      title: '序号',
-      key: 'index',
-      width: '50px',
-      render: (text, recordId, index) => <span>{index + 1}</span>,
-    }, {
-      title: '建筑物地址',
-      dataIndex: 'address',
-      key: 'address',
-      width: '15%',
-    }, {
-      title: '行政区划',
-      dataIndex: 'division',
-      key: 'division',
-      width: '10%',
-    }, {
-      title: '管辖单位',
-      dataIndex: 'institutions',
-      key: 'institutions',
-      width: '10%',
-    }, {
-      title: '管辖警员',
-      dataIndex: 'policeName',
-      key: 'policeName',
-      width: '100px',
-    }, {
-      title: '房屋状态',
-      dataIndex: 'houseStatus',
-      key: 'houseStatus',
-      width: '10%',
-    }, {
-      title: '地址属性',
-      dataIndex: 'addressType',
-      key: 'addressType',
-      width: '100px',
-    }, {
-      title: '操作',
-      key: 'operate',
-      // fixed: 'right',
-      width: 60,
-      render: function(text, record, index) {
-        return (
-          <span>
-              <Button type="primary" size="small">
-                <Link to={`/houseDetail/${text.id}`}>查看</Link>
-              </Button>
-            </span>
-        )
-      },
-    }, ]
-  }
-
   cacheSearch(item) {
     this.props.dispatch(updateHouseCheckListQuery(item))
   }
@@ -157,22 +106,11 @@ export default class houseCheckList extends Component {
     // console.log(houseCheckSearchResult)
     return (
       <div className="page">
-        <Spin spinning={houseCheckSearchResult.loading}>
-          <SearchTable
-            onSubmit={this._handleSubmit}
-            search={houseCheckSearchQuery}
-            cacheSearch={this.cacheSearch}
-            columns={this.columns()}
-            searchList={this.searchList()}
-            tableData={houseCheckSearchResult.list}
-            currentPage={houseCheckSearchResult.currentPage}
-            totalCount={houseCheckSearchResult.totalCount}
-            clear={this._clear}
-            scroll={{ y: true }}
-            loading={houseCheckSearchResult.loading}
-            // hasResetBtn={false}
-          />
-        </Spin>
+        <h2>模温机控制界面</h2>
+        <Row>
+          <Col span={12}>入煤: 514C.</Col>
+          <Col span={12}>出煤: 514C.</Col>
+        </Row>
       </div>
     )
   }

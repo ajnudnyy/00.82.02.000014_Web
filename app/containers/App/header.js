@@ -13,10 +13,13 @@ import {
   Dropdown,
   Button,
   Modal,
-  message
+  message,
+  Icon
 } from 'antd'
 
 const confirm = Modal.confirm
+const SubMenu = Menu.SubMenu;
+const MenuItemGroup = Menu.ItemGroup;
 
 @connect(
   (state, props) => ({
@@ -84,22 +87,54 @@ export default class Header extends Component {
         </Menu.Item>
       </Menu>
     )
+
+    const menu2 = (
+      <Menu className="nav-dropmenu">
+        <Menu.Item key="0">
+          <span className="label">所属单位</span><span>{staff.usertable.gxdwqc}</span>
+        </Menu.Item>
+        <Menu.Divider />
+        <Menu.Item key="1">
+          <span className="label">用户姓名</span><span>{staff.usertable.username}</span>
+        </Menu.Item>
+        <Menu.Item key="5">
+          <Button type="primary" size="small" onClick={this.handleLogout}>退出登录</Button>
+        </Menu.Item>
+      </Menu>
+    )
     return (
       <header id="navbar">
         <div id="navbar-container" className="boxed">
           <div className="navbar-header">
             <Link to={'/'} className="navbar-brand">
               <div className="brand-title">
-                <span className="brand-text">白航铭</span>
+                <span className="brand-text"><img style={{width:'40%'}} src={require('../../images/TOP-STAR-LOGO.png')} /></span>
               </div>
             </Link>
           </div>
 
           <div className="navbar-content clearfix">
+
+            <ul className="nav navbar-top-links" style={{float:'left'}}>
+              <li className="login-info">
+                <Dropdown overlay={menu2} trigger={['click']}>
+                  <a className="ant-dropdown-link">密钥管理服务</a>
+                </Dropdown>
+              </li>
+            </ul>
+
+            <ul className="nav navbar-top-links" style={{float:'left'}}>
+              <li className="login-info">
+                <Dropdown overlay={menu2} trigger={['click']}>
+                  <a className="ant-dropdown-link">控制台</a>
+                </Dropdown>
+              </li>
+            </ul>
+
             <ul className="nav navbar-top-links pull-right">
               <li className="login-info">
                 <Dropdown overlay={menu} trigger={['click']}>
-                  <a className="ant-dropdown-link">{staff.usertable.username || '肚皮叔'}</a>
+                  <a className="ant-dropdown-link">{staff.usertable.username || '唐三藏'}</a>
                 </Dropdown>
               </li>
             </ul>

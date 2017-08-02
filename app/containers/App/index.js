@@ -71,7 +71,7 @@ export default class App extends Component {
                 {children}
               </div>
             </div>
-          </div>
+          </div> 
           <LeftNav
             location={location}
             leftNavMode={this.isLeftNavMini}

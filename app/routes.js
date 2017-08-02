@@ -36,6 +36,12 @@ const test = (location, cb) => {
   }, 'test')
 }
 
+const moldTemp = (location, cb) => {
+  require.ensure([], require => {
+    cb(null, require('./pages/moldTemp/moldTemp').default)
+  }, 'moldTemp')
+}
+
 /* 进入路由的判断*/
 function isLogin(nextState, replaceState) {
   const token = sessionStorage.getItem('token')
@@ -50,9 +56,8 @@ const routes = (
     <Route path="/" component={App} onEnter={isLogin}>
       <IndexRoute component={Welcome} />
       <Route path="/houseManage" getComponent={houseManage} />
-
       <Route path="/test" getComponent={test} query={{'name': 'dupi'}} />
-
+      <Route path="/moldTemp" getComponent={moldTemp} />
     </Route>
     <Route path="/login" getComponent={Login}></Route>
   </Route>

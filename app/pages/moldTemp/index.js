@@ -4,10 +4,6 @@
  * @Last Modified by:   zack bai
  * @Last Modified time: 2017-08-02 15:11:55
  */
-import houseCheck from './houseCheck'
-import houseManage from './houseManage'
+import moldTemp from './moldTemp'
 
-export {
-	houseCheck,
-	houseManage,
-}
+export {  moldTemp }

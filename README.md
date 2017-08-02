@@ -1,3 +1,12 @@
+## 项目更新
+
+git fetch --all 
+
+git add *
+
+git rebase origin master
+
+
 ## 技术栈
 
 react + redux + react-router + webpack + ES6/7 + fetch + less + flex
